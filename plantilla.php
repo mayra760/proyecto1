@@ -15,8 +15,8 @@
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/estilo.css" rel="stylesheet">
-
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="https://getbootstrap.com/2.0.2/assets/ico/favicon.ico">
@@ -51,7 +51,7 @@
           </li>
           <li><a href="controlador.php?seccion=seccion1">iniciar sesión</a></li>
           <li><a href="controlador.php?seccion=seccion2">Registrar</a></li>
-          <li><a href="controlador.php?seccion=seccion3">Saludar</a></li>
+          <li><a href="controlador.php?seccion=seccion3">Bienvenida</a></li>
           <li><a href="controlador.php?seccion=seccion4">Video</a></li>
           <li><a href="controlador.php?seccion=seccion5">contac</a></li>
           <li><a href="controlador.php?seccion=seccion6">usuarios registrados</a></li>
@@ -71,7 +71,6 @@
     <div class="container">
       
       <?php
-        $seccion = isset($_GET['seccion']) ? $_GET['seccion'] : 'default';
         include( $seccion.".php" );
 
       ?>

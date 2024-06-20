@@ -4,12 +4,10 @@
 <?php
 if(!isset($_SESSION)) session_start();
 if(!isset($_SESSION['nombre']) || $_SESSION['nombre'] === '') {
-    header("location: out.html");
+    header("location: out.php");
     exit;
 }
 $nombre = $_SESSION['nombre']; 
-
-include("plantilla.php");
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +25,7 @@ include("plantilla.php");
 </head>
 
 <body>
-    <h1><center>Bienvenid@ <?php echo $nombre; ?></center></h1> <!-- Imprime el nombre del usuario -->
+    <h1><center>Bienvenid@ <?php echo $nombre; ?></center></h1>
 </body>
 
 </html>

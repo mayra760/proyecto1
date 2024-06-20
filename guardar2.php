@@ -24,5 +24,3 @@ if(isset($_GET['nombre']) && isset($_GET['contraseña'])) {
     exit; 
 }
 
-include( "plantilla.php" );
-?>

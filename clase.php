@@ -38,4 +38,56 @@ class login{
         }
         return $salida;  
     }
+
+    public static function agregarpro($id_producto){
+        include 'conexion.php';
+        $salida = "";
+    
+        if(isset($_GET['id']) && is_numeric($_GET['id'])){
+            $id_producto = $_GET['id']; 
+            $id_producto = intval($id_producto);
+    
+            $sql_pro = "SELECT * FROM tb_productos WHERE id_producto = $id_producto";
+            $consulta_pro = $conexion->query($sql_pro);
+    
+            if($consulta_pro->num_rows == 1){
+                $producto = $consulta_pro->fetch_assoc();
+                $nombre_producto = $producto['nombre_producto'];
+                $precio_unitario = $producto['precio'];
+                $documento = 8;
+    
+                $sql_insert = "INSERT INTO tb_carrito(documento, nombre_producto, cantidad, precio) VALUES ('$documento', '$nombre_producto', 8, '$precio_unitario')";
+    
+                if($conexion->query($sql_insert) == TRUE){
+                    echo "producto agregado al carrito correctamente";
+                } else {
+                    echo "error al agregar el producto o producto existente " . $conexion->error;
+                }
+            } else {
+                echo "producto no encontrado";
+            }
+        } else {
+            echo "id no valida";
+        }
+        return $salida;
+    }
+    
+    public static function mostraCarrito(){
+        include 'conexion.php';
+        $salida="";
+        $sql_carrito="SELECT * FROM tb_usuarios";
+        $consulta_carrito=$conexion->query($sql_carrito);
+
+        if ($consulta_carrito->num_rows>0){
+            while($producto=$consulta_carrito->fetch_assoc()){
+                $salida.= "producto: ". $producto['nombre_producto']."<br>";
+                $salida.= "cantidad : ". $producto['cantidad'];
+                $salida.= "precio unitario: " . $producto['precio']. "<br>";
+            }
+        }else{
+            $salida= "el carrito esta vacio";
+        }
+        return $salida;
+    }
+
 }
