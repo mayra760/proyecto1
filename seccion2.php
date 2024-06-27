@@ -5,7 +5,7 @@
 <head>
     <title><?php echo 'sesion de registro'; ?></title>
 </head>
-<div class="row">
+<div class="row"><br>
     <h1>Registrarse</h1>
     <form action="guardar.php" method="get"><br>
         <input type="text" name="documento" placeholder="documento"><br>

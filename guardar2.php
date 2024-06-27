@@ -1,26 +1,29 @@
 <?php
-$nombre = $_GET['nombre'];
-$contraseña = $_GET['contraseña'];
+session_start();
 
-include("clase.php");
-login::autenticar($nombre,$contraseña);
 
-include_once("clase.php");
-if(!isset($_SESSION)) session_start();
-if(!isset($_SESSION['nombre'])) $_SESSION['nombre'] = '';
-if(isset($_GET['nombre']) && isset($_GET['contraseña'])) {
+if (!isset($_SESSION['stop'])) {
+    $_SESSION['stop'] = 0;
+}
+if (isset($_GET['nombre']) && isset($_GET['contraseña'])) {
     $nombre = $_GET['nombre'];
     $contraseña = $_GET['contraseña'];
-    if(login::autenticar($nombre, $contraseña) >= 1) {
+    include("clase.php");
+    if (login::autenticar($nombre, $contraseña) >= 1) {
         $_SESSION['nombre'] = $nombre;
-        header("location: seccion3.php");
+        $_SESSION['stop'] = 0; 
+        header("Location: seccion3.php"); 
         exit; 
     } else {
-        header("location: out.html");
-        exit; 
+        $_SESSION['stop']++;
+        if ($_SESSION['stop'] >= 3) {
+            $_SESSION['blocked'] = true;
+            header("Location: out.php");
+            exit; 
+        } else {
+            header("Location: guardar2.php?error=1");
+            exit; 
+        }
     }
-} else {
-    echo "Error: Debes proporcionar usuario y contraseña.";
-    exit; 
 }
-
+?>

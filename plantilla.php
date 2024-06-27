@@ -1,8 +1,4 @@
-<?php
 
-  //Podría haber código PHP pero se vería en todas las secciones.
-
-?>
 
 <!DOCTYPE html>
 <html lang="en"><head>
@@ -36,6 +32,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
+
       <a class="brand" href="#">FASHION WORLD</a>
       <div class="nav-collapse collapse" style="height: 0px;">
         <ul class="nav">
@@ -43,20 +40,15 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menú <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="controlador.php?seccion=seccion7">Categorías</a></li>
-              <li><a href="#">Tus favoritos</a></li>
-              <li><a href="#">Carrito</a></li>
-              <li><a href="#">Fechas especiales</a></li>
-              <li><a href="#">Mi perfil</a></li>
               </ul>
           </li>
           <li><a href="controlador.php?seccion=seccion1">iniciar sesión</a></li>
           <li><a href="controlador.php?seccion=seccion2">Registrar</a></li>
           <li><a href="controlador.php?seccion=seccion3">Bienvenida</a></li>
           <li><a href="controlador.php?seccion=seccion4">Video</a></li>
-          <li><a href="controlador.php?seccion=seccion5">contac</a></li>
           <li><a href="controlador.php?seccion=seccion6">usuarios registrados</a></li>
-          <li><a href="https://www.sena.edu.co" target="blank">Ir al Sena</a></li>
-        </ul>
+        </ul><br>
+
       </div>
     </div>
   </div>

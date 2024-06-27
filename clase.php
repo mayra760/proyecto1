@@ -46,12 +46,13 @@ class login{
         $consulta = $conexion->query($sql);
         
             while ($fila= $consulta->fetch_assoc()) {
-                $salida.= "<div class='producto' style=>";
-                $salida.= "<img src='" . $fila['ruta_img'] . "' alt='" . $fila['nombre_producto'] . "' width='100'>"; 
-                $salida.= "<p><strong>" . $fila['nombre_producto'] . "</strong></p>"; 
-                $salida.= "<p><strong>Precio: $</strong>" . $fila['precio'] . "</p>";
-                $salida .= "<a href='seccion8.php?detalles=" . urlencode($fila['detalles']) . "' class='btn btn-success'>Detalles</a><br><br><br>"; 
-                $salida.= "</div>";
+                $salida .= "<div class='producto'>";
+                $salida .= "<img src='" . $fila['ruta_img'] . "' alt='" . $fila['nombre_producto'] . "' width='100' class='img-thumbnail'>"; 
+                $salida .= "<p><strong>" . $fila['nombre_producto'] . "</strong></p>"; 
+                $salida .= "<p><strong>Precio: $</strong>" . $fila['precio'] . "</p>";
+                $salida .= "<a href='seccion8.php?detalles=" . urlencode($fila['detalles']) . "' class='btn btn-success'>Detalles</a><br><br><br>";
+                $salida .= "</div>";
+                
         }   
         return $salida;     
     }

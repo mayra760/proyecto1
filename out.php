@@ -5,4 +5,5 @@
 <head>
     <title>no existe</title>
 </head>
-<center><div><h1 style="color: black;">No eres bienvenido</h1></div></center>
+<center><div><h1 style="color: black;"> Fuera no eres bienvenido</h1></div></center>
+<?php

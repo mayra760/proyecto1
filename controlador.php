@@ -10,5 +10,6 @@ if( isset( $_GET[ 'seccion' ] ) ){
 
 //echo $seccion;
 
+//include( "plantill2.php" );
 include( "plantilla.php" );
 ?>

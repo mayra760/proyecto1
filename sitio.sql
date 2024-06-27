@@ -47,8 +47,8 @@ precio float not null,
 primary key (documento)
 );
 
-delete from tb_carrito
-where documento= 2;
+delete from tb_productos
+where id_producto= 3;
 
 select * from tb_carrito;
 select * from tb_compras;
